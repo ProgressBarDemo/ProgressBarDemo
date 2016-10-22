@@ -28,6 +28,15 @@ j = 0;
               percent.innerHTML = i;
               $('#prog').width(i + "%");
 
+              if (i >= 50 && i <= 99) {
+                $('#prog').removeClass('progress-bar-danger');
+                $('#prog').addClass('progress-bar-warning');
+              }
+              else if (i >99) {
+                $('#prog').removeClass('progress-bar-warning');
+                $('#prog').addClass('progress-bar-success');
+              }
+
           }, time * i);
       }(i));
   }
@@ -38,26 +47,17 @@ j = 0;
               fiberPercent.innerHTML = j;
               $('#fiber-prog').width(j + "%");
 
+              if (j >= 50 && j <= 99) {
+                $('#fiber-prog').removeClass('progress-bar-danger');
+                $('#fiber-prog').addClass('progress-bar-warning');
+              }
+              else if (j >99) {
+                $('#fiber-prog').removeClass('progress-bar-warning');
+                $('#fiber-prog').addClass('progress-bar-success');
+              }
+
+
           }, time/multiplier * j);
       }(j));
   }
 })
-// for(i = 1; i <= 100; i++){
-//     (function(i){
-//         setTimeout(function(){
-//             percent.innerHTML = i;
-//             $('#prog').width(i + "%");
-//
-//         }, time * i);
-//     }(i));
-// }
-//
-// for(j = 1; j <= 100; j++){
-//     (function(j){
-//         setTimeout(function(){
-//             fiberPercent.innerHTML = j;
-//             $('#fiber-prog').width(j + "%");
-//
-//         }, time/multiplier * j);
-//     }(j));
-// }
